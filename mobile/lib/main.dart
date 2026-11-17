@@ -59,6 +59,8 @@ class LessonSeries {
 const _channelId = 'UCIo3f71IVat32Y_yJCxQy3g';
 const _channelUrl = 'https://www.youtube.com/channel/$_channelId';
 const _telegramUrl = 'https://t.me/ahmedelsayedah';
+const _facebookUrl = 'https://www.facebook.com/profile.php?id=100070511286467';
+const _facebookReelsUrl = 'https://www.facebook.com/profile.php?id=100070511286467&sk=reels_tab';
 
 const _curatedVideos = <DawahVideo>[
   DawahVideo(
@@ -563,7 +565,7 @@ class _HomeShellState extends State<HomeShell> {
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      _tr('يوتيوب + قناة التليجرام الصوتية', 'YouTube + Telegram Audio'),
+                      _tr('يوتيوب + تليجرام + فيسبوك', 'YouTube + Telegram + Facebook'),
                       style: TextStyle(color: Colors.white.withValues(alpha: 0.85), fontSize: 12),
                     ),
                   ],
@@ -571,6 +573,39 @@ class _HomeShellState extends State<HomeShell> {
               ),
             ],
           ),
+        ),
+        const SizedBox(height: 10),
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: [
+            ActionChip(
+              avatar: const Icon(Icons.facebook, color: Color(0xFF1877F2), size: 18),
+              label: Text(_tr('فيسبوك: بلغوا عني ولو آية', 'Facebook Page')),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => InAppWebScreen(
+                    title: _tr('صفحة بلغوا عني ولو آية', 'Facebook Page'),
+                    url: _facebookUrl,
+                  ),
+                ),
+              ),
+            ),
+            ActionChip(
+              avatar: const Icon(Icons.video_collection_outlined, color: _teal, size: 18),
+              label: Text(_tr('ريلز فيسبوك', 'Facebook Reels')),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => InAppWebScreen(
+                    title: _tr('ريلز بلغوا عني ولو آية', 'Facebook Reels'),
+                    url: _facebookReelsUrl,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
         const SizedBox(height: 14),
         TextField(
@@ -868,9 +903,34 @@ class _HomeShellState extends State<HomeShell> {
                     style: ElevatedButton.styleFrom(backgroundColor: _teal, foregroundColor: Colors.white),
                   ),
                   OutlinedButton.icon(
-                    onPressed: () => launchUrl(Uri.parse(_telegramUrl), mode: LaunchMode.externalApplication),
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => InAppWebScreen(
+                          title: _tr('قناة تليجرام', 'Telegram Channel'),
+                          url: _telegramUrl,
+                        ),
+                      ),
+                    ),
                     icon: const Icon(Icons.send_rounded),
                     label: Text(_tr('قناة تليجرام', 'Telegram Channel')),
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => InAppWebScreen(
+                          title: _tr('بلغوا عني ولو آية', 'Facebook Page'),
+                          url: _facebookUrl,
+                        ),
+                      ),
+                    ),
+                    icon: const Icon(Icons.facebook),
+                    label: Text(_tr('فيسبوك: بلغوا عني ولو آية', 'Facebook Page')),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF1877F2),
+                      foregroundColor: Colors.white,
+                    ),
                   ),
                 ],
               ),
@@ -1082,6 +1142,70 @@ class _TelegramLessonScreenState extends State<TelegramLessonScreen> {
               ],
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class InAppWebScreen extends StatefulWidget {
+  final String title;
+  final String url;
+  const InAppWebScreen({super.key, required this.title, required this.url});
+
+  @override
+  State<InAppWebScreen> createState() => _InAppWebScreenState();
+}
+
+class _InAppWebScreenState extends State<InAppWebScreen> {
+  late final WebViewController _controller;
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0xFFFBF8F1))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onNavigationRequest: (req) {
+            final u = req.url.toLowerCase();
+            if (u.startsWith('http://') || u.startsWith('https://')) {
+              return NavigationDecision.navigate;
+            }
+            return NavigationDecision.prevent;
+          },
+          onPageFinished: (_) {
+            if (mounted) setState(() => _isLoading = false);
+          },
+          onWebResourceError: (_) {
+            if (mounted) setState(() => _isLoading = false);
+          },
+        ),
+      )
+      ..loadRequest(Uri.parse(widget.url));
+    if (!kIsWeb && _controller.platform is AndroidWebViewController) {
+      (_controller.platform as AndroidWebViewController)
+          .setMediaPlaybackRequiresUserGesture(false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF0F4C45),
+        foregroundColor: Colors.white,
+        title: Text(widget.title, maxLines: 1, overflow: TextOverflow.ellipsis),
+      ),
+      body: Stack(
+        children: [
+          WebViewWidget(controller: _controller),
+          if (_isLoading)
+            const Center(
+              child: CircularProgressIndicator(color: Color(0xFFC89B3C)),
+            ),
         ],
       ),
     );
