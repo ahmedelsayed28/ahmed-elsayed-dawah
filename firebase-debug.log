@@ -1,0 +1,89 @@
+[debug] [2026-11-17T13:46:16.418Z] ----------------------------------------------------------------------
+[debug] [2026-11-17T13:46:16.420Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\MegaStore\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js hosting:sites:create ahmed-elsayed-dawah --project marketbusinessapp-8a624
+[debug] [2026-11-17T13:46:16.421Z] CLI Version:   15.16.0
+[debug] [2026-11-17T13:46:16.421Z] Platform:      win32
+[debug] [2026-11-17T13:46:16.421Z] Node Version:  v24.15.0
+[debug] [2026-11-17T13:46:16.421Z] Time:          Tue Nov 17 2026 15:46:16 GMT+0200 (Eastern European Standard Time)
+[debug] [2026-11-17T13:46:16.421Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-11-17T13:46:16.614Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-11-17T13:46:16.615Z] > authorizing via signed-in user (eng.ahmed.elsayed.ahmed1@gmail.com)
+[debug] [2026-11-17T13:46:16.615Z] [iam] checking project marketbusinessapp-8a624 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-11-17T13:46:16.617Z] Checked if tokens are valid: false, expires at: 1794903892560
+[debug] [2026-11-17T13:46:16.617Z] Checked if tokens are valid: false, expires at: 1794903892560
+[debug] [2026-11-17T13:46:16.617Z] > refreshing access token with scopes: []
+[debug] [2026-11-17T13:46:16.619Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-11-17T13:46:16.619Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-11-17T13:46:16.950Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-11-17T13:46:16.950Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-11-17T13:46:16.971Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions [none]
+[debug] [2026-11-17T13:46:16.971Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions  x-goog-user-project=marketbusinessapp-8a624
+[debug] [2026-11-17T13:46:16.971Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-17T13:46:17.878Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions 200
+[debug] [2026-11-17T13:46:17.878Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-17T13:46:17.880Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:17.880Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:17.880Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624 [none]
+[debug] [2026-11-17T13:46:18.135Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624 200
+[debug] [2026-11-17T13:46:18.136Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624 {"projectNumber":"314098664331","projectId":"marketbusinessapp-8a624","lifecycleState":"ACTIVE","name":"marketbusinessapp","labels":{"firebase":"enabled"},"createTime":"2024-07-22T09:16:41.154411Z"}
+[debug] [2026-11-17T13:46:18.136Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:18.136Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:18.136Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites siteId=ahmed-elsayed-dawah&validateOnly=true
+[debug] [2026-11-17T13:46:18.136Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites {"appId":""}
+[debug] [2026-11-17T13:46:20.121Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites 200
+[debug] [2026-11-17T13:46:20.121Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites {"name":"projects/314098664331/sites/ahmed-elsayed-dawah","defaultUrl":"https://ahmed-elsayed-dawah.web.app","type":"USER_SITE"}
+[debug] [2026-11-17T13:46:20.121Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:20.122Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:20.122Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites siteId=ahmed-elsayed-dawah
+[debug] [2026-11-17T13:46:20.122Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites {"appId":""}
+[debug] [2026-11-17T13:46:22.387Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites 200
+[debug] [2026-11-17T13:46:22.387Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites {"name":"projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah","defaultUrl":"https://ahmed-elsayed-dawah.web.app","type":"USER_SITE"}
+[info] 
+[info] +  hosting:sites: Site ahmed-elsayed-dawah has been created in project marketbusinessapp-8a624. 
+[info] +  hosting:sites: Site URL: https://ahmed-elsayed-dawah.web.app 
+[info] 
+[info] To deploy to this site, follow the guide at https://firebase.google.com/docs/hosting/multisites.
+[debug] [2026-11-17T13:46:25.065Z] ----------------------------------------------------------------------
+[debug] [2026-11-17T13:46:25.067Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\MegaStore\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --project marketbusinessapp-8a624
+[debug] [2026-11-17T13:46:25.067Z] CLI Version:   15.16.0
+[debug] [2026-11-17T13:46:25.067Z] Platform:      win32
+[debug] [2026-11-17T13:46:25.068Z] Node Version:  v24.15.0
+[debug] [2026-11-17T13:46:25.068Z] Time:          Tue Nov 17 2026 15:46:25 GMT+0200 (Eastern European Standard Time)
+[debug] [2026-11-17T13:46:25.068Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-11-17T13:46:27.151Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-11-17T13:46:27.152Z] > authorizing via signed-in user (eng.ahmed.elsayed.ahmed1@gmail.com)
+[debug] [2026-11-17T13:46:27.152Z] [iam] checking project marketbusinessapp-8a624 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-11-17T13:46:27.154Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:27.154Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:27.155Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions [none]
+[debug] [2026-11-17T13:46:27.155Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions  x-goog-user-project=marketbusinessapp-8a624
+[debug] [2026-11-17T13:46:27.155Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-17T13:46:27.981Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions 200
+[debug] [2026-11-17T13:46:27.981Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-17T13:46:27.982Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:27.983Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:27.983Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 [none]
+[debug] [2026-11-17T13:46:28.540Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 200
+[debug] [2026-11-17T13:46:28.541Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 {"projectId":"marketbusinessapp-8a624","projectNumber":"314098664331","displayName":"marketbusinessapp","name":"projects/marketbusinessapp-8a624","resources":{"hostingSite":"marketbusinessapp-8a624","realtimeDatabaseInstance":"marketbusinessapp-8a624-default-rtdb"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_a304c404-1f37-463c-9c90-e4ff8443f8cc"}
+[info] 
+[info] === Deploying to 'marketbusinessapp-8a624'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-11-17T13:46:28.551Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:28.552Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:28.552Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah [none]
+[debug] [2026-11-17T13:46:29.840Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah 200
+[debug] [2026-11-17T13:46:29.840Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah {"name":"projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah","defaultUrl":"https://ahmed-elsayed-dawah.web.app","type":"USER_SITE"}
+[debug] [2026-11-17T13:46:29.845Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:29.845Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:29.845Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions [none]
+[debug] [2026-11-17T13:46:29.845Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-11-17T13:46:31.401Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions 200
+[debug] [2026-11-17T13:46:31.401Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/ec9a10c10b5d3d22","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[ahmed-elsayed-dawah]: beginning deploy... 
+[info] i  hosting[ahmed-elsayed-dawah]: found 1 files in web 
+[debug] [2026-11-17T13:46:31.421Z] [hosting] uploading with 200 concurrency
+[debug] [2026-11-17T13:46:31.422Z] [hosting] hash cache [d2Vi] not populated
+[debug] [2026-11-17T13:46:31.429Z] Checked if tokens are valid: true, expires at: 1794926775950
+[debug] [2026-11-17T13:46:31.429Z] Checked if tokens are valid: true, expires at: 1794926775950

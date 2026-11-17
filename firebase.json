@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "site": "ahmed-elsayed-dawah",
+    "public": "web",
+    "ignore": [
+      "firebase.json",
+      "**/.*"
+    ]
+  }
+}
