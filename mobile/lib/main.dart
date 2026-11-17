@@ -1,9 +1,11 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter_android/webview_flutter_android.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -662,8 +664,16 @@ class _HomeShellState extends State<HomeShell> {
                   ),
                   title: Text(l.title, style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14)),
                   subtitle: Text('${l.type} • ${l.duration}'),
-                  trailing: const Icon(Icons.open_in_new, size: 18, color: _teal),
-                  onTap: () => launchUrl(Uri.parse(l.url), mode: LaunchMode.externalApplication),
+                  trailing: const Icon(Icons.play_circle_outline, size: 22, color: _teal),
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => TelegramLessonScreen(
+                        lesson: l,
+                        seriesTitle: series.title,
+                      ),
+                    ),
+                  ),
                 );
               }).toList(),
             ),
@@ -914,6 +924,14 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       ..setBackgroundColor(Colors.black)
       ..setNavigationDelegate(
         NavigationDelegate(
+          onNavigationRequest: (req) {
+            final u = req.url.toLowerCase();
+            // Keep playback strictly inside the app WebView.
+            if (u.startsWith('http://') || u.startsWith('https://') || u.startsWith('about:')) {
+              return NavigationDecision.navigate;
+            }
+            return NavigationDecision.prevent;
+          },
           onPageFinished: (_) {
             if (mounted) setState(() => _isLoading = false);
           },
@@ -923,6 +941,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
         ),
       )
       ..loadHtmlString(html, baseUrl: 'https://ahmed-elsayed-dawah.web.app');
+    if (!kIsWeb && _controller.platform is AndroidWebViewController) {
+      (_controller.platform as AndroidWebViewController)
+          .setMediaPlaybackRequiresUserGesture(false);
+    }
   }
 
   @override
@@ -959,12 +981,104 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(widget.title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 12),
-                OutlinedButton.icon(
-                  onPressed: () => launchUrl(Uri.parse(widget.video.watchUrl), mode: LaunchMode.externalApplication),
-                  icon: const Icon(Icons.ondemand_video),
-                  label: const Text('فتح في تطبيق يوتيوب / Open in YouTube'),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TelegramLessonScreen extends StatefulWidget {
+  final TelegramLesson lesson;
+  final String seriesTitle;
+  const TelegramLessonScreen({
+    super.key,
+    required this.lesson,
+    required this.seriesTitle,
+  });
+
+  @override
+  State<TelegramLessonScreen> createState() => _TelegramLessonScreenState();
+}
+
+class _TelegramLessonScreenState extends State<TelegramLessonScreen> {
+  late final WebViewController _controller;
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    final embedUrl = 'https://t.me/ahmedelsayedah/${widget.lesson.msgId}?embed=1';
+    _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0xFFFBF8F1))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onNavigationRequest: (req) {
+            final u = req.url.toLowerCase();
+            if (u.startsWith('http://') || u.startsWith('https://')) {
+              return NavigationDecision.navigate;
+            }
+            return NavigationDecision.prevent;
+          },
+          onPageFinished: (_) {
+            if (mounted) setState(() => _isLoading = false);
+          },
+          onWebResourceError: (_) {
+            if (mounted) setState(() => _isLoading = false);
+          },
+        ),
+      )
+      ..loadRequest(Uri.parse(embedUrl));
+    if (!kIsWeb && _controller.platform is AndroidWebViewController) {
+      (_controller.platform as AndroidWebViewController)
+          .setMediaPlaybackRequiresUserGesture(false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF0F4C45),
+        foregroundColor: Colors.white,
+        title: Text(widget.lesson.title, maxLines: 1, overflow: TextOverflow.ellipsis),
+      ),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(14),
+            color: const Color(0xFFF5EBD4),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.seriesTitle,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF0F4C45),
+                    fontSize: 13,
+                  ),
                 ),
+                const SizedBox(height: 4),
+                Text(
+                  '${widget.lesson.title} (${widget.lesson.type} • ${widget.lesson.duration})',
+                  style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Stack(
+              children: [
+                WebViewWidget(controller: _controller),
+                if (_isLoading)
+                  const Center(
+                    child: CircularProgressIndicator(color: Color(0xFFC89B3C)),
+                  ),
               ],
             ),
           ),

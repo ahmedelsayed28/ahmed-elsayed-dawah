@@ -484,7 +484,7 @@
               <div><strong>${it.title}</strong></div>
               <div style="display:flex;align-items:center;gap:10px;">
                 <span class="lesson-meta">${it.type} • ${it.dur}</span>
-                <a class="icon-btn" target="_blank" rel="noopener" href="https://t.me/ahmedelsayedah/${it.msg}">${I18N[lang].openTg}</a>
+                <button class="icon-btn" onclick="openTgLesson(${it.msg}, '${it.title.replace(/'/g, "")}')">${I18N[lang].openTg}</button>
               </div>
             </div>`).join("")}
         </div>`;
@@ -510,6 +510,7 @@
 
     function toggleFav(id) { favs = favs.includes(id) ? favs.filter((x) => x !== id) : [...favs, id]; localStorage.setItem("ahmed_favs", JSON.stringify(favs)); renderVideos(); renderFavs(); }
     function openPlayer(id, title) { document.getElementById("modalTitle").textContent = title; document.getElementById("ytFrame").src = `https://www.youtube.com/embed/${id}?autoplay=1`; document.getElementById("playerModal").classList.add("open"); }
+    function openTgLesson(msgId, title) { document.getElementById("modalTitle").textContent = title; document.getElementById("ytFrame").src = `https://t.me/ahmedelsayedah/${msgId}?embed=1`; document.getElementById("playerModal").classList.add("open"); }
     function closePlayer() { document.getElementById("ytFrame").src = ""; document.getElementById("playerModal").classList.remove("open"); }
     function shareVideo(id, title) { const url = `https://www.youtube.com/watch?v=${id}`; if (navigator.share) navigator.share({ title, url }); else navigator.clipboard.writeText(url); }
 
