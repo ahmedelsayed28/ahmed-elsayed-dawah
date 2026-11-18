@@ -40,6 +40,7 @@ class TelegramLesson {
   final String type;
   final String title;
   final String? assetAudioPath;
+  final String? audioUrl;
 
   const TelegramLesson({
     required this.msgId,
@@ -47,6 +48,7 @@ class TelegramLesson {
     required this.type,
     required this.title,
     this.assetAudioPath,
+    this.audioUrl,
   });
 
   String get url => 'https://t.me/ahmedelsayedah/$msgId';
@@ -192,36 +194,120 @@ const _telegramSeries = <LessonSeries>[
   LessonSeries(
     title: 'سلسلة أصول الإيمان في ضوء الكتاب والسنة',
     lessons: [
-      TelegramLesson(msgId: 210, duration: '30:06', type: 'صوت', title: 'المجلس الأول — أصول الإيمان في ضوء الكتاب والسنة'),
-      TelegramLesson(msgId: 225, duration: '38:46', type: 'صوت', title: 'المجلس الثاني — أصول الإيمان في ضوء الكتاب والسنة'),
-      TelegramLesson(msgId: 230, duration: '22:55', type: 'صوت', title: 'المجلس الثالث — في النهي عن أعمال تتعلق بالقبور'),
+      TelegramLesson(
+        msgId: 210,
+        duration: '30:06',
+        type: 'صوت',
+        title: 'المجلس الأول — أصول الإيمان في ضوء الكتاب والسنة',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/osoul_01.mp3',
+      ),
+      TelegramLesson(
+        msgId: 225,
+        duration: '38:46',
+        type: 'صوت',
+        title: 'المجلس الثاني — أصول الإيمان في ضوء الكتاب والسنة',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/osoul_02.mp3',
+      ),
+      TelegramLesson(
+        msgId: 230,
+        duration: '22:55',
+        type: 'صوت',
+        title: 'المجلس الثالث — في النهي عن أعمال تتعلق بالقبور',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/osoul_03.mp3',
+      ),
     ],
   ),
   LessonSeries(
     title: 'سلسلة الفقه الميسر في ضوء الكتاب والسنة',
     lessons: [
-      TelegramLesson(msgId: 217, duration: '30:35', type: 'صوت', title: 'المجلس الأول — الفقه الميسر'),
-      TelegramLesson(msgId: 222, duration: '27:39', type: 'صوت', title: 'المجلس الثاني (١) — الفقه الميسر'),
-      TelegramLesson(msgId: 223, duration: '01:35', type: 'صوت', title: 'تكملة ١ — المجلس الثاني'),
-      TelegramLesson(msgId: 224, duration: '00:58', type: 'صوت', title: 'تكملة ٢ — المجلس الثاني'),
-      TelegramLesson(msgId: 228, duration: '26:36', type: 'صوت', title: 'المجلس الثالث — كتاب الآنية'),
-      TelegramLesson(msgId: 232, duration: '24:12', type: 'صوت', title: 'المجلس الرابع — قضاء الحاجة وآدابها'),
+      TelegramLesson(
+        msgId: 217,
+        duration: '30:35',
+        type: 'صوت',
+        title: 'المجلس الأول — الفقه الميسر',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/fiqh_01.mp3',
+      ),
+      TelegramLesson(
+        msgId: 222,
+        duration: '27:39',
+        type: 'صوت',
+        title: 'المجلس الثاني (١) — الفقه الميسر',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/fiqh_02.mp3',
+      ),
+      TelegramLesson(
+        msgId: 223,
+        duration: '01:35',
+        type: 'صوت',
+        title: 'تكملة ١ — المجلس الثاني',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/fiqh_02_part1.mp3',
+      ),
+      TelegramLesson(
+        msgId: 224,
+        duration: '00:58',
+        type: 'صوت',
+        title: 'تكملة ٢ — المجلس الثاني',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/fiqh_02_part2.mp3',
+      ),
+      TelegramLesson(
+        msgId: 228,
+        duration: '26:36',
+        type: 'صوت',
+        title: 'المجلس الثالث — كتاب الآنية',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/fiqh_03.mp3',
+      ),
+      TelegramLesson(
+        msgId: 232,
+        duration: '24:12',
+        type: 'صوت',
+        title: 'المجلس الرابع — قضاء الحاجة وآدابها',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/fiqh_04_qada_alhaja.mp3',
+      ),
     ],
   ),
   LessonSeries(
     title: 'سلسلة العقيدة والفقه — المرحلة الإعدادية',
     lessons: [
-      TelegramLesson(msgId: 99, duration: '38:11', type: 'صوت', title: 'المحاضرة الأولى (صوتي)'),
+      TelegramLesson(
+        msgId: 99,
+        duration: '38:11',
+        type: 'صوت',
+        title: 'المحاضرة الأولى (صوتي)',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/aqeeda_fiqh_01.ogg',
+      ),
       TelegramLesson(msgId: 107, duration: '38:59', type: 'فيديو', title: 'المحاضرة الأولى (مرئي)'),
-      TelegramLesson(msgId: 113, duration: '51:09', type: 'صوت', title: 'المحاضرة الثانية في العقيدة والفقه'),
-      TelegramLesson(msgId: 120, duration: '27:45', type: 'صوت', title: 'المحاضرة الثالثة في العقيدة والفقه'),
+      TelegramLesson(
+        msgId: 113,
+        duration: '51:09',
+        type: 'صوت',
+        title: 'المحاضرة الثانية في العقيدة والفقه',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/aqeeda_fiqh_02.ogg',
+      ),
+      TelegramLesson(
+        msgId: 120,
+        duration: '27:45',
+        type: 'صوت',
+        title: 'المحاضرة الثالثة في العقيدة والفقه',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/aqeeda_fiqh_03.ogg',
+      ),
     ],
   ),
   LessonSeries(
     title: 'سلسلة التفسير والحديث — المرحلة الإعدادية',
     lessons: [
-      TelegramLesson(msgId: 124, duration: '36:44', type: 'صوت', title: 'المحاضرة الأولى في التفسير والحديث'),
-      TelegramLesson(msgId: 132, duration: '19:46', type: 'صوت', title: 'المحاضرة الثانية (صوتي)'),
+      TelegramLesson(
+        msgId: 124,
+        duration: '36:44',
+        type: 'صوت',
+        title: 'المحاضرة الأولى في التفسير والحديث',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/tafseer_hadith_01.ogg',
+      ),
+      TelegramLesson(
+        msgId: 132,
+        duration: '19:46',
+        type: 'صوت',
+        title: 'المحاضرة الثانية (صوتي)',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/tafseer_hadith_02.ogg',
+      ),
       TelegramLesson(msgId: 133, duration: '19:46', type: 'فيديو', title: 'المحاضرة الثانية (مرئي)'),
       TelegramLesson(msgId: 137, duration: '13:28', type: 'فيديو', title: 'المحاضرة ٣ في التفسير والحديث'),
       TelegramLesson(msgId: 143, duration: '11:46', type: 'فيديو', title: 'المحاضرة الرابعة في التفسير والحديث'),
@@ -238,21 +324,75 @@ const _telegramSeries = <LessonSeries>[
   LessonSeries(
     title: 'سلسلة خطب (الداء والدواء)',
     lessons: [
-      TelegramLesson(msgId: 236, duration: '28:27', type: 'صوت', title: 'الخطبة الأولى — لا تيأس فلكل داء دواء إلا الهرم'),
-      TelegramLesson(msgId: 237, duration: '24:56', type: 'صوت', title: 'الخطبة الثانية — سلاح الدعاء'),
+      TelegramLesson(
+        msgId: 236,
+        duration: '28:27',
+        type: 'صوت',
+        title: 'الخطبة الأولى — لا تيأس فلكل داء دواء إلا الهرم',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/daa_dawaa_01.mp3',
+      ),
+      TelegramLesson(
+        msgId: 237,
+        duration: '24:56',
+        type: 'صوت',
+        title: 'الخطبة الثانية — سلاح الدعاء',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/daa_dawaa_02.mp3',
+      ),
     ],
   ),
   LessonSeries(
     title: 'سلسلة تذكرة التراويح ولقاءات رمضان',
     lessons: [
-      TelegramLesson(msgId: 83, duration: '08:19', type: 'صوت', title: 'تذكرة التراويح (٢) — الرزق مقسوم والحلال مبارك'),
-      TelegramLesson(msgId: 85, duration: '08:56', type: 'صوت', title: 'تذكرة التراويح (٣) — ذكر الفطرة'),
-      TelegramLesson(msgId: 86, duration: '08:04', type: 'صوت', title: 'تذكرة التراويح (٤) — اللهم أنت عضدي'),
+      TelegramLesson(
+        msgId: 83,
+        duration: '08:19',
+        type: 'صوت',
+        title: 'تذكرة التراويح (٢) — الرزق مقسوم والحلال مبارك',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/tarawih_02.mp3',
+      ),
+      TelegramLesson(
+        msgId: 85,
+        duration: '08:56',
+        type: 'صوت',
+        title: 'تذكرة التراويح (٣) — ذكر الفطرة',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/tarawih_03.m4a',
+      ),
+      TelegramLesson(
+        msgId: 86,
+        duration: '08:04',
+        type: 'صوت',
+        title: 'تذكرة التراويح (٤) — اللهم أنت عضدي',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/tarawih_04.mp3',
+      ),
       TelegramLesson(msgId: 201, duration: '09:29', type: 'صوت', title: 'أعظم مطلوب (رمضان)'),
-      TelegramLesson(msgId: 204, duration: '09:52', type: 'صوت', title: 'الدعاء (اللقاء الأول - رمضان)'),
-      TelegramLesson(msgId: 205, duration: '07:41', type: 'صوت', title: 'الدعاء (اللقاء الثاني - رمضان)'),
-      TelegramLesson(msgId: 206, duration: '05:39', type: 'صوت', title: 'الدعاء (اللقاء الرابع - رمضان)'),
-      TelegramLesson(msgId: 207, duration: '06:06', type: 'صوت', title: 'الدعاء (اللقاء الخامس - رمضان)'),
+      TelegramLesson(
+        msgId: 204,
+        duration: '09:52',
+        type: 'صوت',
+        title: 'الدعاء (اللقاء الأول - رمضان)',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/ramadan_dua_01.mp3',
+      ),
+      TelegramLesson(
+        msgId: 205,
+        duration: '07:41',
+        type: 'صوت',
+        title: 'الدعاء (اللقاء الثاني - رمضان)',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/ramadan_dua_02.mp3',
+      ),
+      TelegramLesson(
+        msgId: 206,
+        duration: '05:39',
+        type: 'صوت',
+        title: 'الدعاء (اللقاء الرابع - رمضان)',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/ramadan_dua_04.mp3',
+      ),
+      TelegramLesson(
+        msgId: 207,
+        duration: '06:06',
+        type: 'صوت',
+        title: 'الدعاء (اللقاء الخامس - رمضان)',
+        audioUrl: 'https://github.com/ahmedelsayed28/ahmed-elsayed-dawah/releases/download/audio-v1/ramadan_dua_05.mp3',
+      ),
       TelegramLesson(msgId: 208, duration: '07:30', type: 'صوت', title: 'أولئك الأكياس'),
       TelegramLesson(msgId: 209, duration: '11:14', type: 'صوت', title: 'قد تبين الرشد من الغي'),
       TelegramLesson(msgId: 243, duration: '07:22', type: 'صوت', title: 'في السماء (الرزق والتدبير)'),
@@ -718,11 +858,12 @@ class _HomeShellState extends State<HomeShell> {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => l.assetAudioPath != null
+                      builder: (_) => (l.assetAudioPath != null || l.audioUrl != null)
                           ? NativeAudioScreen(
                               title: l.title,
                               subtitle: series.title,
-                              assetPath: l.assetAudioPath!,
+                              assetPath: l.assetAudioPath,
+                              audioUrl: l.audioUrl,
                             )
                           : TelegramLessonScreen(
                               lesson: l,
@@ -1236,12 +1377,14 @@ class _InAppWebScreenState extends State<InAppWebScreen> {
 class NativeAudioScreen extends StatefulWidget {
   final String title;
   final String subtitle;
-  final String assetPath;
+  final String? assetPath;
+  final String? audioUrl;
   const NativeAudioScreen({
     super.key,
     required this.title,
     required this.subtitle,
-    required this.assetPath,
+    this.assetPath,
+    this.audioUrl,
   });
 
   @override
@@ -1266,7 +1409,11 @@ class _NativeAudioScreenState extends State<NativeAudioScreen> {
     _player.onPlayerStateChanged.listen((s) {
       if (mounted) setState(() => _playing = s == PlayerState.playing);
     });
-    _player.play(AssetSource(widget.assetPath));
+    if (widget.assetPath != null) {
+      _player.play(AssetSource(widget.assetPath!));
+    } else if (widget.audioUrl != null) {
+      _player.play(UrlSource(widget.audioUrl!));
+    }
   }
 
   @override
