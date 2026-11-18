@@ -36,13 +36,11 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
         run: |
-          echo "$KEYSTORE_BASE64" | base64 -d > mobile/android/app/upload-keystore.jks
-          cat <<EOF > mobile/android/keystore.properties
-          storePassword=$STORE_PASSWORD
-          keyPassword=$KEY_PASSWORD
-          keyAlias=$KEY_ALIAS
-          storeFile=upload-keystore.jks
-          EOF
+          printf '%s' "$KEYSTORE_BASE64" | tr -d '\r\n ' | base64 -d > mobile/android/app/upload-keystore.jks
+          printf 'storePassword=%s\nkeyPassword=%s\nkeyAlias=%s\nstoreFile=upload-keystore.jks\n' \
+            "$(printf '%s' "$STORE_PASSWORD" | tr -d '\r\n')" \
+            "$(printf '%s' "$KEY_PASSWORD" | tr -d '\r\n')" \
+            "$(printf '%s' "$KEY_ALIAS" | tr -d '\r\n')" > mobile/android/keystore.properties
 
       - name: Build Release APK & AAB
         working-directory: mobile
