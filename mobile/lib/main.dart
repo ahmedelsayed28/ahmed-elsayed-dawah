@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -38,12 +39,14 @@ class TelegramLesson {
   final String duration;
   final String type;
   final String title;
+  final String? assetAudioPath;
 
   const TelegramLesson({
     required this.msgId,
     required this.duration,
     required this.type,
     required this.title,
+    this.assetAudioPath,
   });
 
   String get url => 'https://t.me/ahmedelsayedah/$msgId';
@@ -174,6 +177,18 @@ const _curatedVideos = <DawahVideo>[
 ];
 
 const _telegramSeries = <LessonSeries>[
+  LessonSeries(
+    title: 'تلاوات استوديو الحرم المكي (تشغيل مباشر بدون إنترنت)',
+    lessons: [
+      TelegramLesson(
+        msgId: 14,
+        duration: '02:15',
+        type: 'صوت استوديو',
+        title: 'فجريات هادئة — جودة الحرم المكي',
+        assetAudioPath: 'audio/fajriyat_haram_pro.mp3',
+      ),
+    ],
+  ),
   LessonSeries(
     title: 'سلسلة أصول الإيمان في ضوء الكتاب والسنة',
     lessons: [
@@ -703,10 +718,16 @@ class _HomeShellState extends State<HomeShell> {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => TelegramLessonScreen(
-                        lesson: l,
-                        seriesTitle: series.title,
-                      ),
+                      builder: (_) => l.assetAudioPath != null
+                          ? NativeAudioScreen(
+                              title: l.title,
+                              subtitle: series.title,
+                              assetPath: l.assetAudioPath!,
+                            )
+                          : TelegramLessonScreen(
+                              lesson: l,
+                              seriesTitle: series.title,
+                            ),
                     ),
                   ),
                 );
@@ -886,7 +907,7 @@ class _HomeShellState extends State<HomeShell> {
               const SizedBox(height: 14),
               Text(
                 _tr(
-                  'تطبيق خفيف ومجاني يجمع التلاوات القرآنية وسلاسل الدروس العلمية والخواطر الدعوية لأحمد السيد من قناته على يوتيوب وتليجرام، بدون الحاجة لتسجيل دخول.',
+                  'تطبيق خفيف يجمع التلاوات القرآنية وسلاسل الدروس العلمية والخواطر الدعوية لأحمد السيد من قناته على يوتيوب وتليجرام، بدون الحاجة لتسجيل دخول.',
                   'A lightweight, login-free app gathering Quran recitations, Islamic audio series, and reminders by Ahmed Elsayed from YouTube and Telegram.',
                 ),
                 style: const TextStyle(fontSize: 15, height: 1.7),
@@ -1207,6 +1228,147 @@ class _InAppWebScreenState extends State<InAppWebScreen> {
               child: CircularProgressIndicator(color: Color(0xFFC89B3C)),
             ),
         ],
+      ),
+    );
+  }
+}
+
+class NativeAudioScreen extends StatefulWidget {
+  final String title;
+  final String subtitle;
+  final String assetPath;
+  const NativeAudioScreen({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.assetPath,
+  });
+
+  @override
+  State<NativeAudioScreen> createState() => _NativeAudioScreenState();
+}
+
+class _NativeAudioScreenState extends State<NativeAudioScreen> {
+  final AudioPlayer _player = AudioPlayer();
+  bool _playing = false;
+  Duration _pos = Duration.zero;
+  Duration _dur = const Duration(minutes: 2, seconds: 15);
+
+  @override
+  void initState() {
+    super.initState();
+    _player.onDurationChanged.listen((d) {
+      if (mounted) setState(() => _dur = d);
+    });
+    _player.onPositionChanged.listen((p) {
+      if (mounted) setState(() => _pos = p);
+    });
+    _player.onPlayerStateChanged.listen((s) {
+      if (mounted) setState(() => _playing = s == PlayerState.playing);
+    });
+    _player.play(AssetSource(widget.assetPath));
+  }
+
+  @override
+  void dispose() {
+    _player.dispose();
+    super.dispose();
+  }
+
+  String _fmt(Duration d) {
+    final m = d.inMinutes.remainder(60).toString().padLeft(2, '0');
+    final s = d.inSeconds.remainder(60).toString().padLeft(2, '0');
+    return '$m:$s';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final maxMs = _dur.inMilliseconds > 0 ? _dur.inMilliseconds.toDouble() : 1.0;
+    final valMs = _pos.inMilliseconds.clamp(0, maxMs.toInt()).toDouble();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF0F4C45),
+        foregroundColor: Colors.white,
+        title: Text(widget.title, maxLines: 1, overflow: TextOverflow.ellipsis),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: const Color(0xFFC89B3C), width: 3),
+                ),
+                child: ClipOval(
+                  child: Image.asset('assets/logo.png', width: 150, height: 150, fit: BoxFit.cover),
+                ),
+              ),
+              const SizedBox(height: 24),
+              Text(
+                widget.subtitle,
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: Color(0xFFC89B3C), fontWeight: FontWeight.bold, fontSize: 14),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                widget.title,
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: Color(0xFF0F4C45), fontWeight: FontWeight.w900, fontSize: 20),
+              ),
+              const SizedBox(height: 28),
+              Slider(
+                value: valMs,
+                max: maxMs,
+                activeColor: const Color(0xFF0F4C45),
+                inactiveColor: const Color(0xFFC89B3C).withValues(alpha: 0.3),
+                onChanged: (v) => _player.seek(Duration(milliseconds: v.toInt())),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(_fmt(_pos)),
+                  Text(_fmt(_dur)),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    iconSize: 36,
+                    color: const Color(0xFF0F4C45),
+                    icon: const Icon(Icons.replay_10),
+                    onPressed: () {
+                      final target = _pos - const Duration(seconds: 10);
+                      _player.seek(target < Duration.zero ? Duration.zero : target);
+                    },
+                  ),
+                  const SizedBox(width: 18),
+                  FloatingActionButton.large(
+                    backgroundColor: const Color(0xFF0F4C45),
+                    foregroundColor: Colors.white,
+                    onPressed: () => _playing ? _player.pause() : _player.resume(),
+                    child: Icon(_playing ? Icons.pause : Icons.play_arrow, size: 40),
+                  ),
+                  const SizedBox(width: 18),
+                  IconButton(
+                    iconSize: 36,
+                    color: const Color(0xFF0F4C45),
+                    icon: const Icon(Icons.forward_10),
+                    onPressed: () {
+                      final target = _pos + const Duration(seconds: 10);
+                      _player.seek(target > _dur ? _dur : target);
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

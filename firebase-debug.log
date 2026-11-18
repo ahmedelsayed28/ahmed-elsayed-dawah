@@ -197,3 +197,425 @@
 [info] 
 [info] Project Console: https://console.firebase.google.com/project/marketbusinessapp-8a624/overview
 [info] Hosting URL: https://ahmed-elsayed-dawah.web.app
+[debug] [2026-11-17T19:42:46.346Z] ----------------------------------------------------------------------
+[debug] [2026-11-17T19:42:46.348Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\MegaStore\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --project marketbusinessapp-8a624
+[debug] [2026-11-17T19:42:46.349Z] CLI Version:   15.16.0
+[debug] [2026-11-17T19:42:46.349Z] Platform:      win32
+[debug] [2026-11-17T19:42:46.349Z] Node Version:  v24.15.0
+[debug] [2026-11-17T19:42:46.349Z] Time:          Tue Nov 17 2026 21:42:46 GMT+0200 (Eastern European Standard Time)
+[debug] [2026-11-17T19:42:46.349Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-11-17T19:42:48.683Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-11-17T19:42:48.684Z] > authorizing via signed-in user (eng.ahmed.elsayed.ahmed1@gmail.com)
+[debug] [2026-11-17T19:42:48.684Z] [iam] checking project marketbusinessapp-8a624 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-11-17T19:42:48.686Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:48.686Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:48.687Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions [none]
+[debug] [2026-11-17T19:42:48.687Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions  x-goog-user-project=marketbusinessapp-8a624
+[debug] [2026-11-17T19:42:48.687Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-17T19:42:49.544Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions 200
+[debug] [2026-11-17T19:42:49.544Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-17T19:42:49.545Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:49.545Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:49.546Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 [none]
+[debug] [2026-11-17T19:42:50.117Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 200
+[debug] [2026-11-17T19:42:50.117Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 {"projectId":"marketbusinessapp-8a624","projectNumber":"314098664331","displayName":"marketbusinessapp","name":"projects/marketbusinessapp-8a624","resources":{"hostingSite":"marketbusinessapp-8a624","realtimeDatabaseInstance":"marketbusinessapp-8a624-default-rtdb"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_75706d0a-ad62-422f-9466-cae9460a1867"}
+[info] 
+[info] === Deploying to 'marketbusinessapp-8a624'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-11-17T19:42:50.120Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:50.120Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:50.120Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah [none]
+[debug] [2026-11-17T19:42:51.236Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah 200
+[debug] [2026-11-17T19:42:51.237Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah {"name":"projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah","defaultUrl":"https://ahmed-elsayed-dawah.web.app","type":"USER_SITE"}
+[debug] [2026-11-17T19:42:51.241Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:51.241Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:51.242Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions [none]
+[debug] [2026-11-17T19:42:51.242Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-11-17T19:42:53.339Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions 200
+[debug] [2026-11-17T19:42:53.340Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[ahmed-elsayed-dawah]: beginning deploy... 
+[info] i  hosting[ahmed-elsayed-dawah]: found 2 files in web 
+[debug] [2026-11-17T19:42:53.368Z] [hosting] uploading with 200 concurrency
+[debug] [2026-11-17T19:42:53.373Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:53.373Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:53.373Z] [hosting] hash cache [d2Vi] stored for 2 files
+[debug] [2026-11-17T19:42:53.374Z] [hosting][hash queue][FINAL] {"max":4,"min":1,"avg":2.5,"active":0,"complete":2,"success":2,"errored":0,"retried":0,"total":2,"elapsed":5}
+[debug] [2026-11-17T19:42:53.374Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c:populateFiles [none]
+[debug] [2026-11-17T19:42:53.374Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c:populateFiles {"files":{"/logo.png":"e6d04023e2a5102ea584b20d69a9badb70fb12a52ae42f729bb72ef649c95ceb","/index.html":"bff8d6e8e67c88a36223cd71b4b3de0ab21da4c831b5237c20eb3f043fc6ae98"}}
+[debug] [2026-11-17T19:42:54.507Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c:populateFiles 200
+[debug] [2026-11-17T19:42:54.507Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c:populateFiles {"uploadRequiredHashes":["bff8d6e8e67c88a36223cd71b4b3de0ab21da4c831b5237c20eb3f043fc6ae98"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c/files"}
+[debug] [2026-11-17T19:42:54.509Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:54.510Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:54.510Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c/files/bff8d6e8e67c88a36223cd71b4b3de0ab21da4c831b5237c20eb3f043fc6ae98 [none]
+[debug] [2026-11-17T19:42:54.510Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c/files/bff8d6e8e67c88a36223cd71b4b3de0ab21da4c831b5237c20eb3f043fc6ae98 [stream]
+[debug] [2026-11-17T19:42:54.513Z] [hosting][populate queue][FINAL] {"max":1137,"min":1137,"avg":1137,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1140}
+[debug] [2026-11-17T19:42:54.514Z] [hosting] uploads queued: 1
+[info] i  hosting: uploading new files [0/1] (0%) 
+[debug] [2026-11-17T19:42:55.659Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c/files/bff8d6e8e67c88a36223cd71b4b3de0ab21da4c831b5237c20eb3f043fc6ae98 200
+[debug] [2026-11-17T19:42:55.659Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c/files/bff8d6e8e67c88a36223cd71b4b3de0ab21da4c831b5237c20eb3f043fc6ae98 [stream]
+[debug] [2026-11-17T19:42:55.659Z] [hosting][upload queue][FINAL] {"max":1151,"min":1151,"avg":1151,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1151}
+[info] i  hosting: upload complete 
+[info] +  hosting[ahmed-elsayed-dawah]: file upload complete 
+[debug] [2026-11-17T19:42:55.660Z] [hosting] deploy completed after 2316ms
+[debug] [2026-11-17T19:42:55.660Z] [
+  {
+    "config": {
+      "site": "ahmed-elsayed-dawah",
+      "public": "web",
+      "ignore": [
+        "firebase.json",
+        "**/.*"
+      ]
+    },
+    "version": "projects/314098664331/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c"
+  }
+]
+[info] i  hosting[ahmed-elsayed-dawah]: finalizing version... 
+[debug] [2026-11-17T19:42:55.662Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:55.662Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:55.662Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c updateMask=status%2Cconfig
+[debug] [2026-11-17T19:42:55.662Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c {"status":"FINALIZED","config":{}}
+[debug] [2026-11-17T19:42:57.112Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c 200
+[debug] [2026-11-17T19:42:57.112Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-11-17T19:42:54.784404Z","createUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com"},"finalizeTime":"2026-11-17T19:43:00.070476Z","finalizeUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com"}}
+[debug] [2026-11-17T19:42:57.112Z] [hosting] finalized version for ahmed-elsayed-dawah:[object Object]
+[info] +  hosting[ahmed-elsayed-dawah]: version finalized 
+[info] i  hosting[ahmed-elsayed-dawah]: releasing new version... 
+[debug] [2026-11-17T19:42:57.113Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:57.113Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:42:57.113Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases versionName=projects%2F314098664331%2Fsites%2Fahmed-elsayed-dawah%2Fversions%2F1628b183db1e6e3c
+[debug] [2026-11-17T19:42:57.113Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases {}
+[debug] [2026-11-17T19:42:58.656Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases 200
+[debug] [2026-11-17T19:42:58.656Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/channels/live/releases/1794944580562000","version":{"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-11-17T19:42:54.784404Z","createUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"},"finalizeTime":"2026-11-17T19:43:00.070476Z","finalizeUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}},"type":"DEPLOY","releaseTime":"2026-11-17T19:43:00.562Z","releaseUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}}
+[debug] [2026-11-17T19:42:58.656Z] [hosting] release: {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/channels/live/releases/1794944580562000","version":{"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/1628b183db1e6e3c","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-11-17T19:42:54.784404Z","createUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"},"finalizeTime":"2026-11-17T19:43:00.070476Z","finalizeUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}},"type":"DEPLOY","releaseTime":"2026-11-17T19:43:00.562Z","releaseUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}}
+[info] +  hosting[ahmed-elsayed-dawah]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/marketbusinessapp-8a624/overview
+[info] Hosting URL: https://ahmed-elsayed-dawah.web.app
+[debug] [2026-11-17T19:47:30.763Z] ----------------------------------------------------------------------
+[debug] [2026-11-17T19:47:30.765Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\MegaStore\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --project marketbusinessapp-8a624
+[debug] [2026-11-17T19:47:30.765Z] CLI Version:   15.16.0
+[debug] [2026-11-17T19:47:30.765Z] Platform:      win32
+[debug] [2026-11-17T19:47:30.765Z] Node Version:  v24.15.0
+[debug] [2026-11-17T19:47:30.766Z] Time:          Tue Nov 17 2026 21:47:30 GMT+0200 (Eastern European Standard Time)
+[debug] [2026-11-17T19:47:30.766Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-11-17T19:47:33.234Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-11-17T19:47:33.235Z] > authorizing via signed-in user (eng.ahmed.elsayed.ahmed1@gmail.com)
+[debug] [2026-11-17T19:47:33.235Z] [iam] checking project marketbusinessapp-8a624 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-11-17T19:47:33.238Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:33.239Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:33.240Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions [none]
+[debug] [2026-11-17T19:47:33.240Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions  x-goog-user-project=marketbusinessapp-8a624
+[debug] [2026-11-17T19:47:33.240Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-17T19:47:34.117Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions 200
+[debug] [2026-11-17T19:47:34.117Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-17T19:47:34.118Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:34.118Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:34.119Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 [none]
+[debug] [2026-11-17T19:47:34.515Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 200
+[debug] [2026-11-17T19:47:34.515Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 {"projectId":"marketbusinessapp-8a624","projectNumber":"314098664331","displayName":"marketbusinessapp","name":"projects/marketbusinessapp-8a624","resources":{"hostingSite":"marketbusinessapp-8a624","realtimeDatabaseInstance":"marketbusinessapp-8a624-default-rtdb"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_75706d0a-ad62-422f-9466-cae9460a1867"}
+[info] 
+[info] === Deploying to 'marketbusinessapp-8a624'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-11-17T19:47:34.519Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:34.519Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:34.520Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah [none]
+[debug] [2026-11-17T19:47:35.538Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah 200
+[debug] [2026-11-17T19:47:35.539Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah {"name":"projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah","defaultUrl":"https://ahmed-elsayed-dawah.web.app","type":"USER_SITE"}
+[debug] [2026-11-17T19:47:35.549Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:35.549Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:35.549Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions [none]
+[debug] [2026-11-17T19:47:35.549Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-11-17T19:47:37.530Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions 200
+[debug] [2026-11-17T19:47:37.530Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[ahmed-elsayed-dawah]: beginning deploy... 
+[info] i  hosting[ahmed-elsayed-dawah]: found 2 files in web 
+[debug] [2026-11-17T19:47:37.541Z] [hosting] uploading with 200 concurrency
+[debug] [2026-11-17T19:47:37.547Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:37.547Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:37.548Z] [hosting] hash cache [d2Vi] stored for 2 files
+[debug] [2026-11-17T19:47:37.548Z] [hosting][hash queue][FINAL] {"max":4,"min":1,"avg":2.5,"active":0,"complete":2,"success":2,"errored":0,"retried":0,"total":2,"elapsed":5}
+[debug] [2026-11-17T19:47:37.548Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa:populateFiles [none]
+[debug] [2026-11-17T19:47:37.548Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa:populateFiles {"files":{"/logo.png":"e6d04023e2a5102ea584b20d69a9badb70fb12a52ae42f729bb72ef649c95ceb","/index.html":"86119db6bc22517bbd5129ffd3269a554952f94f04430f8de08605313a9cccf3"}}
+[debug] [2026-11-17T19:47:38.414Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa:populateFiles 200
+[debug] [2026-11-17T19:47:38.414Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa:populateFiles {"uploadRequiredHashes":["86119db6bc22517bbd5129ffd3269a554952f94f04430f8de08605313a9cccf3"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa/files"}
+[debug] [2026-11-17T19:47:38.416Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:38.416Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:38.417Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa/files/86119db6bc22517bbd5129ffd3269a554952f94f04430f8de08605313a9cccf3 [none]
+[debug] [2026-11-17T19:47:38.418Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa/files/86119db6bc22517bbd5129ffd3269a554952f94f04430f8de08605313a9cccf3 [stream]
+[debug] [2026-11-17T19:47:38.422Z] [hosting][populate queue][FINAL] {"max":870,"min":870,"avg":870,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":875}
+[debug] [2026-11-17T19:47:38.423Z] [hosting] uploads queued: 1
+[info] i  hosting: uploading new files [0/1] (0%) 
+[debug] [2026-11-17T19:47:39.615Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa/files/86119db6bc22517bbd5129ffd3269a554952f94f04430f8de08605313a9cccf3 200
+[debug] [2026-11-17T19:47:39.615Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa/files/86119db6bc22517bbd5129ffd3269a554952f94f04430f8de08605313a9cccf3 [stream]
+[debug] [2026-11-17T19:47:39.615Z] [hosting][upload queue][FINAL] {"max":1200,"min":1200,"avg":1200,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1200}
+[info] i  hosting: upload complete 
+[info] +  hosting[ahmed-elsayed-dawah]: file upload complete 
+[debug] [2026-11-17T19:47:39.615Z] [hosting] deploy completed after 2082ms
+[debug] [2026-11-17T19:47:39.616Z] [
+  {
+    "config": {
+      "site": "ahmed-elsayed-dawah",
+      "public": "web",
+      "ignore": [
+        "firebase.json",
+        "**/.*"
+      ]
+    },
+    "version": "projects/314098664331/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa"
+  }
+]
+[info] i  hosting[ahmed-elsayed-dawah]: finalizing version... 
+[debug] [2026-11-17T19:47:39.617Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:39.617Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:39.617Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa updateMask=status%2Cconfig
+[debug] [2026-11-17T19:47:39.617Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa {"status":"FINALIZED","config":{}}
+[debug] [2026-11-17T19:47:41.026Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa 200
+[debug] [2026-11-17T19:47:41.026Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-11-17T19:47:39.085461Z","createUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com"},"finalizeTime":"2026-11-17T19:47:43.921310Z","finalizeUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com"}}
+[debug] [2026-11-17T19:47:41.026Z] [hosting] finalized version for ahmed-elsayed-dawah:[object Object]
+[info] +  hosting[ahmed-elsayed-dawah]: version finalized 
+[info] i  hosting[ahmed-elsayed-dawah]: releasing new version... 
+[debug] [2026-11-17T19:47:41.027Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:41.028Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T19:47:41.028Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases versionName=projects%2F314098664331%2Fsites%2Fahmed-elsayed-dawah%2Fversions%2F71886c7e7df650aa
+[debug] [2026-11-17T19:47:41.029Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases {}
+[debug] [2026-11-17T19:47:42.616Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases 200
+[debug] [2026-11-17T19:47:42.617Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/channels/live/releases/1794944864511000","version":{"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-11-17T19:47:39.085461Z","createUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"},"finalizeTime":"2026-11-17T19:47:43.921310Z","finalizeUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}},"type":"DEPLOY","releaseTime":"2026-11-17T19:47:44.511Z","releaseUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}}
+[debug] [2026-11-17T19:47:42.617Z] [hosting] release: {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/channels/live/releases/1794944864511000","version":{"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/71886c7e7df650aa","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-11-17T19:47:39.085461Z","createUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"},"finalizeTime":"2026-11-17T19:47:43.921310Z","finalizeUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}},"type":"DEPLOY","releaseTime":"2026-11-17T19:47:44.511Z","releaseUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}}
+[info] +  hosting[ahmed-elsayed-dawah]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/marketbusinessapp-8a624/overview
+[info] Hosting URL: https://ahmed-elsayed-dawah.web.app
+[debug] [2026-11-17T20:04:19.191Z] ----------------------------------------------------------------------
+[debug] [2026-11-17T20:04:19.196Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\MegaStore\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --project marketbusinessapp-8a624
+[debug] [2026-11-17T20:04:19.197Z] CLI Version:   15.16.0
+[debug] [2026-11-17T20:04:19.197Z] Platform:      win32
+[debug] [2026-11-17T20:04:19.197Z] Node Version:  v24.15.0
+[debug] [2026-11-17T20:04:19.198Z] Time:          Tue Nov 17 2026 22:04:19 GMT+0200 (Eastern European Standard Time)
+[debug] [2026-11-17T20:04:19.198Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-11-17T20:04:25.107Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-11-17T20:04:25.109Z] > authorizing via signed-in user (eng.ahmed.elsayed.ahmed1@gmail.com)
+[debug] [2026-11-17T20:04:25.109Z] [iam] checking project marketbusinessapp-8a624 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-11-17T20:04:25.112Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:25.113Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:25.115Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions [none]
+[debug] [2026-11-17T20:04:25.115Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions  x-goog-user-project=marketbusinessapp-8a624
+[debug] [2026-11-17T20:04:25.115Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-17T20:04:26.002Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions 200
+[debug] [2026-11-17T20:04:26.003Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-17T20:04:26.004Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:26.004Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:26.005Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 [none]
+[debug] [2026-11-17T20:04:26.387Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 200
+[debug] [2026-11-17T20:04:26.387Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 {"projectId":"marketbusinessapp-8a624","projectNumber":"314098664331","displayName":"marketbusinessapp","name":"projects/marketbusinessapp-8a624","resources":{"hostingSite":"marketbusinessapp-8a624","realtimeDatabaseInstance":"marketbusinessapp-8a624-default-rtdb"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_75706d0a-ad62-422f-9466-cae9460a1867"}
+[info] 
+[info] === Deploying to 'marketbusinessapp-8a624'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-11-17T20:04:26.392Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:26.392Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:26.393Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah [none]
+[debug] [2026-11-17T20:04:27.394Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah 200
+[debug] [2026-11-17T20:04:27.394Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah {"name":"projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah","defaultUrl":"https://ahmed-elsayed-dawah.web.app","type":"USER_SITE"}
+[debug] [2026-11-17T20:04:27.401Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:27.402Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:27.402Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions [none]
+[debug] [2026-11-17T20:04:27.402Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-11-17T20:04:29.156Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions 200
+[debug] [2026-11-17T20:04:29.157Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[ahmed-elsayed-dawah]: beginning deploy... 
+[info] i  hosting[ahmed-elsayed-dawah]: found 4 files in web 
+[debug] [2026-11-17T20:04:29.179Z] [hosting] uploading with 200 concurrency
+[debug] [2026-11-17T20:04:29.827Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:29.827Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:29.828Z] [hosting] hash cache [d2Vi] stored for 4 files
+[debug] [2026-11-17T20:04:29.829Z] [hosting][hash queue][FINAL] {"max":641,"min":2,"avg":165.25,"active":0,"complete":4,"success":4,"errored":0,"retried":0,"total":4,"elapsed":647}
+[debug] [2026-11-17T20:04:29.829Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8:populateFiles [none]
+[debug] [2026-11-17T20:04:29.829Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8:populateFiles {"files":{"/logo.png":"e6d04023e2a5102ea584b20d69a9badb70fb12a52ae42f729bb72ef649c95ceb","/privacy.html":"8b90f676e41a34624ca22ba8464d6c53f7dde114be99ab7a3349ebfe6ea09dbf","/index.html":"b737b1aff69479942ddc626ac294f4dcf27bd759b1d234d437f0bfe239f1b220","/audio/fajriyat_haram_pro.mp3":"2458f39dfdfebf810c53459944044ca7e582787bb40ea3fba05ad31480cc6dbf"}}
+[debug] [2026-11-17T20:04:30.611Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8:populateFiles 200
+[debug] [2026-11-17T20:04:30.611Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8:populateFiles {"uploadRequiredHashes":["8b90f676e41a34624ca22ba8464d6c53f7dde114be99ab7a3349ebfe6ea09dbf","b737b1aff69479942ddc626ac294f4dcf27bd759b1d234d437f0bfe239f1b220","2458f39dfdfebf810c53459944044ca7e582787bb40ea3fba05ad31480cc6dbf"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files"}
+[debug] [2026-11-17T20:04:30.613Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:30.613Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:30.614Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:30.614Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:30.614Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:30.614Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:30.615Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files/8b90f676e41a34624ca22ba8464d6c53f7dde114be99ab7a3349ebfe6ea09dbf [none]
+[debug] [2026-11-17T20:04:30.615Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files/8b90f676e41a34624ca22ba8464d6c53f7dde114be99ab7a3349ebfe6ea09dbf [stream]
+[debug] [2026-11-17T20:04:30.618Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files/b737b1aff69479942ddc626ac294f4dcf27bd759b1d234d437f0bfe239f1b220 [none]
+[debug] [2026-11-17T20:04:30.618Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files/b737b1aff69479942ddc626ac294f4dcf27bd759b1d234d437f0bfe239f1b220 [stream]
+[debug] [2026-11-17T20:04:30.620Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files/2458f39dfdfebf810c53459944044ca7e582787bb40ea3fba05ad31480cc6dbf [none]
+[debug] [2026-11-17T20:04:30.620Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files/2458f39dfdfebf810c53459944044ca7e582787bb40ea3fba05ad31480cc6dbf [stream]
+[debug] [2026-11-17T20:04:30.622Z] [hosting][populate queue][FINAL] {"max":788,"min":788,"avg":788,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":796}
+[debug] [2026-11-17T20:04:30.623Z] [hosting] uploads queued: 3
+[info] i  hosting: uploading new files [0/3] (0%) 
+[debug] [2026-11-17T20:04:31.759Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files/8b90f676e41a34624ca22ba8464d6c53f7dde114be99ab7a3349ebfe6ea09dbf 200
+[debug] [2026-11-17T20:04:31.759Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files/8b90f676e41a34624ca22ba8464d6c53f7dde114be99ab7a3349ebfe6ea09dbf [stream]
+[debug] [2026-11-17T20:04:31.835Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files/b737b1aff69479942ddc626ac294f4dcf27bd759b1d234d437f0bfe239f1b220 200
+[debug] [2026-11-17T20:04:31.836Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files/b737b1aff69479942ddc626ac294f4dcf27bd759b1d234d437f0bfe239f1b220 [stream]
+[info] i  hosting: uploading new files [2/3] (66%) 
+[debug] [2026-11-17T20:04:33.393Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files/2458f39dfdfebf810c53459944044ca7e582787bb40ea3fba05ad31480cc6dbf 200
+[debug] [2026-11-17T20:04:33.393Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8/files/2458f39dfdfebf810c53459944044ca7e582787bb40ea3fba05ad31480cc6dbf [stream]
+[debug] [2026-11-17T20:04:33.393Z] [hosting][upload queue][FINAL] {"max":2779,"min":1147,"avg":1716.3333333333333,"active":0,"complete":3,"success":3,"errored":0,"retried":0,"total":3,"elapsed":2781}
+[info] i  hosting: upload complete 
+[info] +  hosting[ahmed-elsayed-dawah]: file upload complete 
+[debug] [2026-11-17T20:04:33.394Z] [hosting] deploy completed after 4233ms
+[debug] [2026-11-17T20:04:33.394Z] [
+  {
+    "config": {
+      "site": "ahmed-elsayed-dawah",
+      "public": "web",
+      "ignore": [
+        "firebase.json",
+        "**/.*"
+      ]
+    },
+    "version": "projects/314098664331/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8"
+  }
+]
+[info] i  hosting[ahmed-elsayed-dawah]: finalizing version... 
+[debug] [2026-11-17T20:04:33.396Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:33.396Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:33.396Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8 updateMask=status%2Cconfig
+[debug] [2026-11-17T20:04:33.397Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8 {"status":"FINALIZED","config":{}}
+[debug] [2026-11-17T20:04:34.812Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8 200
+[debug] [2026-11-17T20:04:34.812Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8 {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-11-17T20:04:30.891891Z","createUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com"},"finalizeTime":"2026-11-17T20:04:37.707785Z","finalizeUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com"}}
+[debug] [2026-11-17T20:04:34.813Z] [hosting] finalized version for ahmed-elsayed-dawah:[object Object]
+[info] +  hosting[ahmed-elsayed-dawah]: version finalized 
+[info] i  hosting[ahmed-elsayed-dawah]: releasing new version... 
+[debug] [2026-11-17T20:04:34.813Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:34.813Z] Checked if tokens are valid: true, expires at: 1794946935640
+[debug] [2026-11-17T20:04:34.813Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases versionName=projects%2F314098664331%2Fsites%2Fahmed-elsayed-dawah%2Fversions%2Fc4e662fae61186c8
+[debug] [2026-11-17T20:04:34.813Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases {}
+[debug] [2026-11-17T20:04:36.580Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases 200
+[debug] [2026-11-17T20:04:36.581Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/channels/live/releases/1794945878450000","version":{"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-11-17T20:04:30.891891Z","createUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"},"finalizeTime":"2026-11-17T20:04:37.707785Z","finalizeUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}},"type":"DEPLOY","releaseTime":"2026-11-17T20:04:38.450Z","releaseUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}}
+[debug] [2026-11-17T20:04:36.581Z] [hosting] release: {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/channels/live/releases/1794945878450000","version":{"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/c4e662fae61186c8","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-11-17T20:04:30.891891Z","createUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"},"finalizeTime":"2026-11-17T20:04:37.707785Z","finalizeUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}},"type":"DEPLOY","releaseTime":"2026-11-17T20:04:38.450Z","releaseUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}}
+[info] +  hosting[ahmed-elsayed-dawah]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/marketbusinessapp-8a624/overview
+[info] Hosting URL: https://ahmed-elsayed-dawah.web.app
+[debug] [2026-11-17T20:04:41.817Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\MegaStore\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:309:49)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-11-18T05:25:44.666Z] ----------------------------------------------------------------------
+[debug] [2026-11-18T05:25:44.672Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\MegaStore\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --project marketbusinessapp-8a624
+[debug] [2026-11-18T05:25:44.672Z] CLI Version:   15.16.0
+[debug] [2026-11-18T05:25:44.673Z] Platform:      win32
+[debug] [2026-11-18T05:25:44.673Z] Node Version:  v24.15.0
+[debug] [2026-11-18T05:25:44.673Z] Time:          Wed Nov 18 2026 07:25:44 GMT+0200 (Eastern European Standard Time)
+[debug] [2026-11-18T05:25:44.673Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-11-18T05:25:53.374Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-11-18T05:25:53.375Z] > authorizing via signed-in user (eng.ahmed.elsayed.ahmed1@gmail.com)
+[debug] [2026-11-18T05:25:53.375Z] [iam] checking project marketbusinessapp-8a624 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-11-18T05:25:53.378Z] Checked if tokens are valid: false, expires at: 1794949704334
+[debug] [2026-11-18T05:25:53.378Z] Checked if tokens are valid: false, expires at: 1794949704334
+[debug] [2026-11-18T05:25:53.378Z] > refreshing access token with scopes: []
+[debug] [2026-11-18T05:25:53.381Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-11-18T05:25:53.381Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-11-18T05:25:53.607Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-11-18T05:25:53.607Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-11-18T05:25:53.625Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions [none]
+[debug] [2026-11-18T05:25:53.625Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions  x-goog-user-project=marketbusinessapp-8a624
+[debug] [2026-11-18T05:25:53.625Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-18T05:25:54.442Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions 200
+[debug] [2026-11-18T05:25:54.442Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/marketbusinessapp-8a624:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-18T05:25:54.443Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:25:54.443Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:25:54.443Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 [none]
+[debug] [2026-11-18T05:25:54.911Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 200
+[debug] [2026-11-18T05:25:54.911Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/marketbusinessapp-8a624 {"projectId":"marketbusinessapp-8a624","projectNumber":"314098664331","displayName":"marketbusinessapp","name":"projects/marketbusinessapp-8a624","resources":{"hostingSite":"marketbusinessapp-8a624","realtimeDatabaseInstance":"marketbusinessapp-8a624-default-rtdb"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_6af7107d-1275-4f33-b794-569ec4248794"}
+[info] 
+[info] === Deploying to 'marketbusinessapp-8a624'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-11-18T05:25:54.915Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:25:54.915Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:25:54.915Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah [none]
+[debug] [2026-11-18T05:25:56.192Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah 200
+[debug] [2026-11-18T05:25:56.192Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah {"name":"projects/marketbusinessapp-8a624/sites/ahmed-elsayed-dawah","defaultUrl":"https://ahmed-elsayed-dawah.web.app","type":"USER_SITE"}
+[debug] [2026-11-18T05:25:56.197Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:25:56.197Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:25:56.197Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions [none]
+[debug] [2026-11-18T05:25:56.197Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-11-18T05:25:58.154Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions 200
+[debug] [2026-11-18T05:25:58.154Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[ahmed-elsayed-dawah]: beginning deploy... 
+[info] i  hosting[ahmed-elsayed-dawah]: found 4 files in web 
+[debug] [2026-11-18T05:25:58.168Z] [hosting] uploading with 200 concurrency
+[debug] [2026-11-18T05:25:58.174Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:25:58.174Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:25:58.175Z] [hosting] hash cache [d2Vi] stored for 4 files
+[debug] [2026-11-18T05:25:58.175Z] [hosting][hash queue][FINAL] {"max":3,"min":0,"avg":1.5,"active":0,"complete":4,"success":4,"errored":0,"retried":0,"total":4,"elapsed":5}
+[debug] [2026-11-18T05:25:58.175Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a:populateFiles [none]
+[debug] [2026-11-18T05:25:58.175Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a:populateFiles {"files":{"/logo.png":"e6d04023e2a5102ea584b20d69a9badb70fb12a52ae42f729bb72ef649c95ceb","/audio/fajriyat_haram_pro.mp3":"2458f39dfdfebf810c53459944044ca7e582787bb40ea3fba05ad31480cc6dbf","/privacy.html":"61b7d4a172e6f080c8b6baae2f70313ddd3146d5a768ef64b1b7acf233cdc38d","/index.html":"d9b1d245a9b3a6a9bf957b26ea60c2824d57370b2734d9c9fccbce0589b9b630"}}
+[debug] [2026-11-18T05:25:59.356Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a:populateFiles 200
+[debug] [2026-11-18T05:25:59.357Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/314098664331/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a:populateFiles {"uploadRequiredHashes":["61b7d4a172e6f080c8b6baae2f70313ddd3146d5a768ef64b1b7acf233cdc38d","d9b1d245a9b3a6a9bf957b26ea60c2824d57370b2734d9c9fccbce0589b9b630"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a/files"}
+[debug] [2026-11-18T05:25:59.358Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:25:59.358Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:25:59.359Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:25:59.359Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:25:59.359Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a/files/61b7d4a172e6f080c8b6baae2f70313ddd3146d5a768ef64b1b7acf233cdc38d [none]
+[debug] [2026-11-18T05:25:59.360Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a/files/61b7d4a172e6f080c8b6baae2f70313ddd3146d5a768ef64b1b7acf233cdc38d [stream]
+[debug] [2026-11-18T05:25:59.362Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a/files/d9b1d245a9b3a6a9bf957b26ea60c2824d57370b2734d9c9fccbce0589b9b630 [none]
+[debug] [2026-11-18T05:25:59.363Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a/files/d9b1d245a9b3a6a9bf957b26ea60c2824d57370b2734d9c9fccbce0589b9b630 [stream]
+[debug] [2026-11-18T05:25:59.366Z] [hosting][populate queue][FINAL] {"max":1185,"min":1185,"avg":1185,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1192}
+[debug] [2026-11-18T05:25:59.366Z] [hosting] uploads queued: 2
+[info] i  hosting: uploading new files [0/2] (0%) 
+[debug] [2026-11-18T05:26:00.631Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a/files/d9b1d245a9b3a6a9bf957b26ea60c2824d57370b2734d9c9fccbce0589b9b630 200
+[debug] [2026-11-18T05:26:00.631Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a/files/d9b1d245a9b3a6a9bf957b26ea60c2824d57370b2734d9c9fccbce0589b9b630 [stream]
+[debug] [2026-11-18T05:26:00.647Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a/files/61b7d4a172e6f080c8b6baae2f70313ddd3146d5a768ef64b1b7acf233cdc38d 200
+[debug] [2026-11-18T05:26:00.647Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a/files/61b7d4a172e6f080c8b6baae2f70313ddd3146d5a768ef64b1b7acf233cdc38d [stream]
+[debug] [2026-11-18T05:26:00.648Z] [hosting][upload queue][FINAL] {"max":1291,"min":1273,"avg":1282,"active":0,"complete":2,"success":2,"errored":0,"retried":0,"total":2,"elapsed":1291}
+[info] i  hosting: upload complete 
+[info] +  hosting[ahmed-elsayed-dawah]: file upload complete 
+[debug] [2026-11-18T05:26:00.648Z] [hosting] deploy completed after 2489ms
+[debug] [2026-11-18T05:26:00.648Z] [
+  {
+    "config": {
+      "site": "ahmed-elsayed-dawah",
+      "public": "web",
+      "ignore": [
+        "firebase.json",
+        "**/.*"
+      ]
+    },
+    "version": "projects/314098664331/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a"
+  }
+]
+[info] i  hosting[ahmed-elsayed-dawah]: finalizing version... 
+[debug] [2026-11-18T05:26:00.649Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:26:00.650Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:26:00.650Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a updateMask=status%2Cconfig
+[debug] [2026-11-18T05:26:00.650Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a {"status":"FINALIZED","config":{}}
+[debug] [2026-11-18T05:26:02.571Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a 200
+[debug] [2026-11-18T05:26:02.571Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-11-18T05:26:00.028342Z","createUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com"},"finalizeTime":"2026-11-18T05:26:05.722882Z","finalizeUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com"}}
+[debug] [2026-11-18T05:26:02.571Z] [hosting] finalized version for ahmed-elsayed-dawah:[object Object]
+[info] +  hosting[ahmed-elsayed-dawah]: version finalized 
+[info] i  hosting[ahmed-elsayed-dawah]: releasing new version... 
+[debug] [2026-11-18T05:26:02.572Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:26:02.572Z] Checked if tokens are valid: true, expires at: 1794983152607
+[debug] [2026-11-18T05:26:02.572Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases versionName=projects%2F314098664331%2Fsites%2Fahmed-elsayed-dawah%2Fversions%2F9dcf712675dd6b2a
+[debug] [2026-11-18T05:26:02.572Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases {}
+[debug] [2026-11-18T05:26:04.072Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases 200
+[debug] [2026-11-18T05:26:04.072Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ahmed-elsayed-dawah/channels/live/releases {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/channels/live/releases/1794979566212000","version":{"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-11-18T05:26:00.028342Z","createUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"},"finalizeTime":"2026-11-18T05:26:05.722882Z","finalizeUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}},"type":"DEPLOY","releaseTime":"2026-11-18T05:26:06.212Z","releaseUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}}
+[debug] [2026-11-18T05:26:04.072Z] [hosting] release: {"name":"projects/314098664331/sites/ahmed-elsayed-dawah/channels/live/releases/1794979566212000","version":{"name":"projects/314098664331/sites/ahmed-elsayed-dawah/versions/9dcf712675dd6b2a","status":"FINALIZED","config":{},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-11-18T05:26:00.028342Z","createUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"},"finalizeTime":"2026-11-18T05:26:05.722882Z","finalizeUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}},"type":"DEPLOY","releaseTime":"2026-11-18T05:26:06.212Z","releaseUser":{"email":"eng.ahmed.elsayed.ahmed1@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocJBm_nnUGOZd45q95B-j1gqAd85xsLsf_3JiL1GME345W7B8gYY"}}
+[info] +  hosting[ahmed-elsayed-dawah]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/marketbusinessapp-8a624/overview
+[info] Hosting URL: https://ahmed-elsayed-dawah.web.app

@@ -2,3 +2,7 @@ mobile/build/
 mobile/.dart_tool/
 mobile/.flutter-plugins-dependencies
 .firebase/
+*.jks
+keystore.properties
+release/
+firebase-debug.log
