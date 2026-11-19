@@ -5,6 +5,17 @@
     "ignore": [
       "firebase.json",
       "**/.*"
+    ],
+    "headers": [
+      {
+        "source": "/app_config.json",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
     ]
   }
 }

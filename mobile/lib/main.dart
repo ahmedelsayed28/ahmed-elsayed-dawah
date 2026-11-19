@@ -8,6 +8,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 
+import 'force_update_gate.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
@@ -468,6 +470,7 @@ class _AhmedElsayedAppState extends State<AhmedElsayedApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: _isArabic ? 'أحمد السيد' : 'Ahmed Elsayed',
+      builder: (context, child) => ForceUpdateGate(child: child!),
       theme: ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: const Color(0xFFFBF8F1),
