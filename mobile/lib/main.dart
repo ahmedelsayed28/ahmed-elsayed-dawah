@@ -182,13 +182,13 @@ const _curatedVideos = <DawahVideo>[
 
 const _telegramSeries = <LessonSeries>[
   LessonSeries(
-    title: 'تلاوات استوديو الحرم المكي (تشغيل مباشر بدون إنترنت)',
+    title: 'تلاوات قرآنية (تشغيل مباشر بدون إنترنت)',
     lessons: [
       TelegramLesson(
         msgId: 14,
         duration: '02:15',
-        type: 'صوت استوديو',
-        title: 'فجريات هادئة — جودة الحرم المكي',
+        type: 'تلاوة صوتية',
+        title: 'فجريات هادئة',
         assetAudioPath: 'audio/fajriyat_haram_pro.mp3',
       ),
     ],
